@@ -31,10 +31,22 @@ function AllCustomers() {
                <div style={{fontFamily:"Manrope",height:"40px",display:'flex',alignItems:"center",justifyContent:'center',marginLeft:"15px",padding:"5px 10px",fontSize:'12px',boxSizing:"border-box",color:'#407BFF',backgroundColor:"#DCE5FF"}}>
                 Clear
                </div>
-                {segmentState && <div style={{position:'absolute',display:"flex",boxShadow:'1px 0px 15px rgb(216, 214, 214)',flexDirection:"column",backgroundColor:'white',paddingLeft:'30px',justifyContent:"space-around",top:'70px',zIndex:"40",borderRadius:"10px",width:"450px",height:"150px"}}>
-                                    <p style={{fontWeight:"700",fontFamily:"Manrope",fontSize:"20px",letterSpacing:'1.3px'}}>Segmentation Analysis</p>
-                                    <p style={{fontWeight:"700",fontFamily:"Manrope",fontSize:"20px",letterSpacing:'1.3px'}}>Customers' Profile</p>
-                                </div>}
+                {segmentState && <section style={{position:'absolute',padding:'15px 5px',display:"flex",boxShadow:'1px 0px 15px rgb(216, 214, 214)',flexDirection:"column",backgroundColor:'white',paddingLeft:'30px',justifyContent:"space-around",top:'70px',zIndex:"40",borderRadius:"10px",width:"300px",height:"auto"}}>
+                                    <div style={{width:"90%",margin:"15px auto",height:'auto'}}>
+                                        <span style={{color:'black',fontFamily:'Manrope',fontSize:'15px',fontWeight:'600'}} >Customer ID</span>
+                                        <div style={{width:"50%",display:"flex",alignItems:"center",paddingLeft:"15px",fontFamily:'Manrope',justifyContent:"left",border:"0.3px solid lightblue",height:'45px'}}>1DN5FJS</div>
+                                    </div>
+                                    <div style={{width:"90%",margin:"15px auto"}}>
+                                        <span style={{color:'black',fontFamily:'Manrope',fontSize:'15px',fontWeight:'600'}} >Select</span>
+                                        <div style={{width:'80%',display:"flex"}}>
+                                            <span style={{fontFamily:"Manrope"}}>Existing</span>
+                                            <span style={{fontFamily:"Manrope",marginLeft:'20px'}}>New</span>
+                                        </div>
+                                    </div>
+                                    <div style={{width:"85%",backgroundColor:"lightblue",fontFamily:"Manrope",display:"flex",padding:'15px 0px',color:"white",alignItems:"center",justifyContent:'center',margin:"15px auto"}}>
+                                        Search
+                                    </div>
+                                </section>}
             </div>
             <div  style={{position:'relative',display:"flex",backgroundColor:'white',width:'100px',letterSpacing:"1.5px",height:'40px'}}>
                 <div  style={{width:'100%',backgroundColor:"#407BFF",height:'100%',display:"flex",justifyContent:"space-around",alignItems:"center",}}>

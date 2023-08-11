@@ -72,10 +72,10 @@ function Segmentation() {
             </div>
           </div>
 
-          { customerProfile? <CustomerProfile />: <><div style={{width:'90%',margin:"10px auto",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                <div style={{width:"45%",backgroundColor:"white",padding:'15px',boxShadow:'1px 0px 15px rgb(216, 214, 214)',borderRadius:"10px",height:'300px'}}>
+          { customerProfile? <CustomerProfile />: <><div style={{width:'90%',margin:"10px auto",display:"flex",flexDirection:width<1000?"column":"row",justifyContent:"space-between",alignItems:"center"}}>
+                <div style={{width:width<1300?"90%":"45%",backgroundColor:"white",padding:'15px',boxShadow:'1px 0px 15px rgb(216, 214, 214)',borderRadius:"10px",height:width<1000?"350px":'300px'}}>
                     <p style={{fontFamily:'Manrope',fontWeight:"700",fontSize:'20px'}}>Total Population</p>
-                    <div style={{height:'70%',width:"90%",margin:'10px auto',display:"flex",justifyContent:'space-around',alignItems:"center"}}>
+                    <div style={{height:'70%',width:"90%",margin:'10px auto',display:"flex",flexDirection:width<900?"column":"row",justifyContent:'space-around',alignItems:"center"}}>
                         <div style={{width:'50%',height:"100%"}}><PieChart chartData={pieData}/></div>
                         <div style={{width:'40%',height:"80%"}}>
                             {DashboardData.data_entries.map(datas=> <div style={{display:"flex",justifyContent:"left",height:"20%",alignItems:"center"}}>
@@ -86,7 +86,7 @@ function Segmentation() {
                         </div>
                     </div>
                 </div>
-                <div style={{width:"45%",backgroundColor:"white",padding:'15px',boxShadow:'1px 0px 15px rgb(216, 214, 214)',borderRadius:"10px",height:'300px'}}>
+                <div style={{width:width<1300?"90%":"45%",marginTop:width<1300?"40px":'',backgroundColor:"white",padding:'15px',boxShadow:'1px 0px 15px rgb(216, 214, 214)',borderRadius:"10px",height:width<1300?"350px":'300px'}}>
                     <p style={{fontFamily:'Manrope',fontWeight:"700",fontSize:'20px'}}>Active Clients &nbsp;&nbsp; <span style={{fontSize:"12px",fontWeight:'300'}}>{'(percentage)'}</span></p>
                     <div style={{height:'70%',width:"90%",margin:'10px auto',display:"flex",justifyContent:'space-around',alignItems:"center"}}> 
                             <div style={{width:'50%',height:"100%",display:"flex",justifyContent:"center",position:"relative",alignItems:"center"}}>
