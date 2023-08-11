@@ -20,6 +20,51 @@ function AllCustomers() {
                     
 
   return (
+    <>
+    { sortState?<>
+    <div onClick={()=>setSortState(false)} style={{position:"fixed",backgroundColor:"transparent",top:'0px',left:"0px",height:"100vh",width:"100vw",WebkitBackdropFilter:'blur(4px)',backdropFilter:'blur(4px)',zIndex:"30000000000"}}>
+
+    </div>
+    <div style={{position:"fixed",width:'75%',padding:'20px 30px',height:"400px",boxShadow:'1px 0px 15px rgb(216, 214, 214)',transform:"translate(-50%,-50%)",top:"50%",left:"50%",backgroundColor:'white',zIndex:"30000000001"}}>
+      <span style={{fontFamily:"Manrope",fontWeight:"600",fontSize:"17px"}}>Select Category</span>
+      <div style={{display:"flex",justifyContent:"space-between",marginTop:"25px",marginBottom:'70px'}}>
+          <div style={{display:"flex",alignItems:"center"}}>
+            <span style={{width:"15px",height:'15px',border:'1px solid lightblue'}}></span>
+            <span style={{fontFamily:"Manrope",fontSize:"17px",marginLeft:'10px'}}>The Agric Clients</span>
+          </div>
+          <div style={{display:"flex",alignItems:"center"}}>
+            <span style={{width:"15px",height:'15px',border:'1px solid lightblue'}}></span>
+            <span style={{fontFamily:"Manrope",fontSize:"17px",marginLeft:'10px'}}>The Micro Techs</span>
+          </div>
+          <div style={{display:"flex",alignItems:"center"}}>
+            <span style={{width:"15px",height:'15px',border:'1px solid lightblue'}}></span>
+            <span style={{fontFamily:"Manrope",fontSize:"17px",marginLeft:'10px'}}>The Retail Techs</span>
+          </div>
+          <div style={{display:"flex",alignItems:"center"}}>
+            <span style={{width:"15px",height:'15px',border:'1px solid lightblue'}}></span>
+            <span style={{fontFamily:"Manrope",fontSize:"17px",marginLeft:'10px'}}>The Loyalists</span>
+          </div>
+          <div style={{display:"flex",alignItems:"center"}}>
+            <span style={{width:"15px",height:'15px',border:'1px solid lightblue'}}></span>
+            <span style={{fontFamily:"Manrope",fontSize:"17px",marginLeft:'10px'}}>The Corporates</span>
+          </div>
+      </div>
+
+      <span style={{fontFamily:"Manrope",fontWeight:"600",fontSize:"17px",marginTop:'50px'}}>Select Loan Period</span>
+      <div style={{display:"flex",width:"60%",justifyContent:"space-between",marginTop:"20px"}}>
+        <div style={{}}>
+          <span style={{fontFamily:'Manrope'}}>Start Date</span>
+          <div style={{width:"250px",marginTop:'10px',height:"60px",border:"1px solid lightblue",fontFamily:"Manrope",fontSize:"20px",color:"grey",display:'flex',alignItems:"center",justifyContent:"left",paddingLeft:"15px"}}>mm-yyyy</div>
+        </div>
+        <div>
+          <span style={{fontFamily:'Manrope'}}>End Date</span>
+          <div style={{width:"250px",marginTop:'10px',height:"60px",border:"1px solid lightblue",fontFamily:"Manrope",fontSize:"20px",color:"grey",display:'flex',alignItems:"center",justifyContent:"left",paddingLeft:"15px"}}>mm-yyyy</div>
+        </div>
+      </div>
+
+      <div onClick={()=>setSortState(false)} style={{fontFamily:"Manrope",cursor:'pointer',fontSize:"15px",width:'fit-content',marginTop:'25px',padding:'5px 14px',letterSpacing:"1.5px",backgroundColor:"#2F74DD",color:'white'}}>Apply filter</div>
+    </div>
+    </>:
     <div style={{width:"100%",height:"100%"}}>
         <p style={{fontFamily:"Manrope",fontSize:"25px",fontWeight:'700',color:'black',width:"90%",margin:"15px auto",marginTop:'15px'}}>All Customers</p> 
         <div style={{width:'90%',margin:"30px auto",display:"flex",flexDirection:width<1000?'column':'row',justifyContent:'space-between',alignItems:"center",height:width<1000?"150px":""}}>
@@ -49,24 +94,12 @@ function AllCustomers() {
                                 </section>}
             </div>
             <div  style={{position:'relative',display:"flex",backgroundColor:'white',width:'100px',letterSpacing:"1.5px",height:'40px'}}>
-                <div  style={{width:'100%',backgroundColor:"#407BFF",height:'100%',display:"flex",justifyContent:"space-around",alignItems:"center",}}>
+                <div onClick={()=>setSortState(true)} style={{width:'100%',cursor:'pointer',backgroundColor:"#407BFF",height:'100%',display:"flex",justifyContent:"space-around",alignItems:"center",}}>
                     <img style={{cursor:'pointer'}} src={sortIcon}/>
                     <span style={{fontFamily:"Manrope",color:'white'}}>Sort</span>
                 </div>
 
-                {sortState && <div style={{position:'absolute',display:"flex",paddingTop:'20px',boxShadow:'1px 0px 15px rgb(216, 214, 214)',flexDirection:"column",backgroundColor:'white',paddingLeft:'5px',justifyContent:"space-around",alignItems:"left",top:'70px',zIndex:"40",borderRadius:"10px",width:"250px",height:"300px"}}>
-                                    <p style={{fontWeight:"700",margin:"0px auto",marginBottom:'25px',fontFamily:"Manrope",fontSize:"15px",width:"80%",letterSpacing:'1.3px',textAlign:'left'}}>Insert date range</p>
-                                    <div style={{height:"45px",width:"80%",margin:'25px auto',position:"relative"}}>
-                                      <p style={{fontFamily:'Manrope',position:'absolute',top:'-40px',fontSize:'12px',fontWeight:"700",height:"20px"}}>Start date</p>
-                                      <input onClick={()=>{setEndDate('May-2022');setStartDate('Nov-2021')}} value={startDate} placeholder='Input date' style={{ height:'100%',paddingLeft:'20px',fontFamily:'Manrope',boxSizing:'border-box',borderRadius:'5px',width:'100%',fontSize:'15px',color: 'black',outline:'none',borderWidth:'1px',border:'1px solid lightblue',textAlign:'left',backgroundColor:"rgb(222, 235, 239)"}}/>
-                                    </div>
-                                    <div style={{height:"45px",width:"80%",position:"relative",margin:"25px auto"}}>
-                                      <p style={{fontFamily:'Manrope',position:'absolute',top:'-40px',fontSize:'12px',fontWeight:"700",height:"20px"}}>End date</p>
-                                      <input onClick={()=> {setEndDate('May-2022');setStartDate('Nov-2021')}} value={endDate} placeholder='Input date' style={{ height:'45px',paddingLeft:'20px',fontFamily:'Manrope',boxSizing:'border-box',borderRadius:'5px',width:'100%',outline:"none",fontSize:'15px',color: 'black',borderWidth:'1px',border:'1px solid lightblue',textAlign:'left',backgroundColor:"rgb(222, 235, 239)"}}/>
-                                    </div>
-                                    <p style={{marginTop:'5px',marginLeft:'10%',color:endDate===""?"lightblue":'white',backgroundColor: endDate===""? "rgb(222, 235, 239)":'#2F74DD',fontFamily:"Manrope",width:"70px",fontWeight:"700",display:"flex",border:'1px solid lightblue',alignItems:"center",justifyContent:"center",padding:'3px 7px',borderRadius:'7px'}}>Done</p>
-                            
-                                </div>}
+           
             </div>
           </div>
 
@@ -89,6 +122,8 @@ function AllCustomers() {
             </div>)}
           </div>
     </div>
+    }
+    </>
   )
 }
 

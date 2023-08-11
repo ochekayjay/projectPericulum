@@ -14,13 +14,13 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-function Segmentation() {
+function Segmentation({customerProfile, setCustomerProfile}) {
     const backgrounds = ["#15CC93","#C4A2FC","#4C3EDB","#407BFF","#FFBC73"]
     const [segmentShow, setSegmentShow] = useState(false)
     const [calendarShow, setCalendarShow] = useState(false)
     const [startDate,setStartDate] = useState('')
     const [endDate,setEndDate] = useState('')
-    const [customerProfile,setCustomerProfile] = useState(false)
+    //const [customerProfile,setCustomerProfile] = useState(false)
     const navigate = useNavigate()
     const [pieData,setPieData] = useState({
       labels: DashboardData.data_entries,

@@ -18,6 +18,7 @@ function App() {
   const [calendarShow, setCalendarShow] = useState(false)
   const [startDate,setStartDate] = useState('')
   const [endDate,setEndDate] = useState('')
+  const [customerProfile,setCustomerProfile] = useState(false)
   const navigate = useNavigate()
   const [pieData,setPieData] = useState({
     labels: DashboardData.data_entries,
@@ -30,13 +31,13 @@ function App() {
 
   return (
     <div className="App">
-        <div style={{width:'100vw',position:"fixed",top:'0px',zIndex:'1400000',left:"0px",height:'70px',padding:'0px 20px 0px 20px',boxSizing:"border-box",backgroundColor:"#2F74DD",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+        <div style={{width:'100vw',position:"fixed",top:'0px',zIndex:'14000',left:"0px",height:'70px',padding:'0px 20px 0px 20px',boxSizing:"border-box",backgroundColor:"#2F74DD",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
             <p style={{color:'white',fontFamily:"NexaTextBold",fontSize:"20px"}}>CREDIT CHART</p>
             <img src={settingIcon}/>
         </div>
         <div style={{width:'80px',display:width<1000?"none":"block",position:"fixed",top:"70px",left:"0px",backgroundColor:"white",height:'calc(100vh - 70px)'}}>
           <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"space-around", height:"130px"}}>
-            <section style={{cursor:"pointer"}} onClick={()=>navigate("/")}>
+            <section style={{cursor:"pointer"}} onClick={()=>{setCustomerProfile(false);navigate("/")}}>
               <img src={homeIcon}/>
             </section>
             <section style={{cursor:"pointer"}} onClick={()=>navigate("/customers")} >
@@ -47,7 +48,7 @@ function App() {
 
         <section style={{minHeight:'calc(100vh - 70px)',overflow:"auto",padding:'15px 0px',marginLeft:width<1000?"0px":"80px",marginTop:'70px',backgroundColor:"#F5F7FA",width:width<1000?"100%":'calc(100vw - 80px)',boxSizing:"border-box"}}>
             <Routes>
-                <Route path={"/"} element={<Segmentation/>}/>
+                <Route path={"/"} element={<Segmentation customerProfile={customerProfile} setCustomerProfile={setCustomerProfile}/>}/>
                 <Route path={'/customers'} element={<AllCustomers/>} />
                 
             </Routes>
