@@ -1,0 +1,38 @@
+:root {
+ background-color: white;
+ padding: 0px;
+ margin: 0px
+}
+
+
+body {
+  margin: 0;
+
+}
+/*
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}*/
+
+@font-face {
+  font-family: "NexaTextBold";
+  src: local("NexaTextBold"),
+    url("../NEXAFONTS/OTF/Nexa-Black.otf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "NexaTextLight";
+  src: local("NexaTextLight"),
+    url("../NEXAFONTS/OTF/Nexa-Light.otf") format("truetype");
+  font-weight: 500;
+}
+
+
+
+

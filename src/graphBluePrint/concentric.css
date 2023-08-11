@@ -1,0 +1,31 @@
+.concentric{
+    fill: none;
+    stroke: #ddd
+}
+
+.TheCorporates{
+    fill: none;
+    stroke: #FFBC73;
+    stroke-linecap: round;
+}
+
+.microTech{
+    fill: none;
+    stroke: #4C3EDB;
+    stroke-linecap: round;
+}
+.TheLoyalists{
+    fill: none;
+    stroke: #407BFF;
+    stroke-linecap: round;
+}
+.AgricClients{
+    fill: none;
+    stroke:  #C4A2FC;
+    stroke-linecap: round;
+}
+.TheRetailTechs{
+    fill: none;
+    stroke: #15CC93;
+    stroke-linecap: round;
+}
